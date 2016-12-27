@@ -10,5 +10,11 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Latest Micropost:</strong>
+  <%= unless @user.microposts.empty?
+    @user.microposts.first.content
+  end %>
+</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
